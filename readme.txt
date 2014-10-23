@@ -1,7 +1,7 @@
 === Tabs ===
 	Contributors: paratheme
 	Donate link: http://paratheme.com
-	Tags: tabs
+	Tags: tabs, Responsive Tabs, Tabs plugin, jQuery Tabs, tabs short-code, tabs Widget, tabs plugin wordpress, tabs plugin jquery
 	Requires at least: 3.8
 	Tested up to: 4.0
 	Stable tag: 1.0
@@ -18,17 +18,15 @@ Tabs is pure HTML & CSS3 responsive Tabs grid for WordPress. By this plugin you 
 
 ### Tabs by http://paratheme.com
 
-
+<br />
 
 
 <strong>Plugin Features</strong><br />
-
-
-
 * Fully responsive and mobile ready.
 * Unlimited Tabs anywhere.
 * Use via short-code.
 * Different Theme.
+* Easy input field for Tabs content.
 * Background Image for Tabs area.
 * Custom Active tabs background color.
 * Custom default background color.
