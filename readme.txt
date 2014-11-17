@@ -4,11 +4,11 @@
 	Tags: tabs, Responsive Tabs, Tabs plugin, jQuery Tabs, tabs short-code, tabs Widget, tabs plugin wordpress, tabs plugin jquery
 	Requires at least: 3.8
 	Tested up to: 4.0
-	Stable tag: 1.0
+	Stable tag: 1.1
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-	CSS3 responsive Tabs for WordPress.
+	CSS3 Responsive Content Tabs for WordPress.
 
 == Description ==
 
@@ -64,6 +64,11 @@ then paste this shortcode anywhere in your page to display Tabs<br />
 
 == Changelog ==
 
+	
+	= 1.1 =
+    * 17/11/2014 add confirmation before delete tab.
+    * 17/11/2014 Update help page.	
+    * 17/11/2014 minor js error fixed.		
 	
 	= 1.0 =
     * 23/10/2014 Initial release.

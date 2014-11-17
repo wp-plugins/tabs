@@ -20,104 +20,19 @@
 
 
 
-
-
-#tabs_metabox ul.tab-nav {
-  clear: both;
-  margin: 0;
-  padding: 0;
-}
-
-#tabs_metabox ul.tab-nav li {
-  background: #e6e6e6;
-  cursor: pointer;
-  display: inline-block;
-  float: left;
-  margin: 0;
-  padding: 8px 15px;
-}
-
-#tabs_metabox ul.tab-nav li.active{
-	background:#d8d6d6;
-	border-top:3px solid #11b063;
-	padding-top:6px;
-	}
-#tabs_metabox ul.box {
-  clear: both;
-  margin: 0;
-  padding: 0;
-}
-
-#tabs_metabox ul.box li.tab-box {
-  border: 1px solid rgb(153, 153, 153);
-  display: none;
-  margin: 0;
-  padding: 20px 0 10px 10px;
-  width: 100%;
-}
-
-
-
-
-#tabs_metabox .tabs_loading_taxonomy_category {
-  background: url("loading.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-  height: 11px;
-  margin-bottom: 20px;
-  width: 30px;
-}
-
-
-#tabs_metabox div.tabs_taxonomy_category{}
-
-
-#tabs_metabox ul.content_source_area {
-  margin-left: 15px;
-}
-
-#tabs_metabox ul.content_source_area li{}
-
-
-#tabs_metabox ul.content_source_area .content-source-box {
-  display: none;
-}
-
-#tabs_metabox ul.content_source_area li div.active {
-  background: none repeat scroll 0 0 #e6e6e6;
-  border-left: 3px solid #11b063;
-  display: block;
-  margin: 10px 10px 0 20px;
-  padding: 10px 0 10px 5px;
-}
-
-#tabs_metabox .tab-box td {
-  border-left: 3px solid #fff;
-}
-
-#tabs_metabox .tab-box td:hover {
-  background: #e6e6e6;
-  border-left: 3px solid #11b063;
-}
-
-
-#tabs_metabox .tab-box > table {
-  width: 100%;
-}
-
-
-
 #tabs_metabox .tabs-content tr{
 
 }
 
 #tabs_metabox .tabs-content td {
-border-left: 3px solid #64b88f;
-background:#f5f5f5;
+  background: none repeat scroll 0 0 rgb(245, 245, 245);
+  border-left: 3px solid rgb(255, 255, 255);
+  padding-bottom: 15px;
 }
 
-
-#tabs_metabox .tabs-content input,
-#tabs_metabox .tabs-content textarea{
-  width: 100%;
+#tabs_metabox .tabs-content input, #tabs_metabox .tabs-content textarea {
+  margin-left: 10px;
+  width: 95%;
 }
 
 
@@ -125,7 +40,17 @@ background:#f5f5f5;
   background: none repeat scroll 0 0 rgb(221, 221, 221);
   border: 1px solid rgb(255, 255, 255);
   cursor: pointer;
+  margin: 3px;
   padding: 1px 5px;
+  position: absolute;
+}
+
+#tabs_metabox .tabs-content .removeTabs:hover {
+  background: none repeat scroll 0 0 rgb(255, 134, 87);
+}
+
+#tabs_metabox .tabs-content .tab-new {
+  background: none repeat scroll 0 0 #a3dbff;
 }
 
 

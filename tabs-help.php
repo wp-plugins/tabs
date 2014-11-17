@@ -1,115 +1,100 @@
 <div class="wrap">
-	<?php echo "<h2>".__(tabs_plugin_name.' Help')."</h2>";?>
+	<?php echo "<h2>".__(tabs_plugin_name.' Help')."</h2>";
+	
+    $tabs_customer_type = get_option('tabs_customer_type');
+    $tabs_version = get_option('tabs_version');
+	
+	
+	?>
     <br />
 
-		  
+
+
+    <div class="para-settings">
+        <ul class="tab-nav"> 
+            <li nav="1" class="nav1 active">Help & Upgrade</li>
+        </ul> <!-- tab-nav end -->  
+        
+		<ul class="box">
+        
+            <li style="display: block;" class="box1 tab-box active">
+<div class="option-box">
+                    <p class="option-title">Need Help ?</p>
+                    <p class="option-info">Feel free to contact with any issue for this plugin, Ask any question via forum <a href="<?php echo tabs_qa_url; ?>"><?php echo tabs_qa_url; ?></a> <strong style="color:#139b50;">(free)</strong><br />
+                    
+                    
+                    
+
+    <?php
+
+
+    if($tabs_customer_type=="free")
+        {
+    
+            echo 'You are using <strong> '.$tabs_customer_type.' version  '.$tabs_version.'</strong> of <strong>'.tabs_plugin_name.'</strong>, To get more feature you could try our premium version. ';
+            
+            echo '<br /><a href="'.tabs_pro_url.'">'.tabs_pro_url.'</a>';
+            
+        }
+    else
+        {
+    
+            echo 'Thanks for using <strong> premium version  '.$tabs_version.'</strong> of <strong>'.tabs_plugin_name.'</strong> ';	
+            
+            
+        }
+    
+     ?>       
+
+           
+                    
+                    
+                    
+                    </p>
+                    
+                    
+                    
+                </div>
+                
+                
+				<div class="option-box">
+                    <p class="option-title">Submit Reviews...</p>
+                    <p class="option-info">We are working hard to build some awesome plugins for you and spend thousand hour for plugins. we wish your three(3) minute by submitting five star reviews at wordpress.org. if you have any issue please submit at forum.</p>
+                	<img class="tabs-pro-pricing" src="<?php echo tabs_plugin_url."css/five-star.png";?>" /><br />
+                    <a target="_blank" href="<?php echo tabs_wp_reviews; ?>">
+                		<?php echo tabs_wp_reviews; ?>
+               		</a>
+                    
+                    
+                    
+                </div>
+                
+				<div class="option-box">
+                    <p class="option-title">Please Share</p>
+                    <p class="option-info">If you like this plugin please share with your social share network.</p>
+                    <?php
+                    
+						echo tabs_share_plugin();
+					?>
+                </div>
+                
+<!-- 
+
+				<div class="option-box">
+                    <p class="option-title">Video Tutorial</p>
+                    <p class="option-info">Please watch this video tutorial.</p>
+                	<iframe width="640" height="480" src="<?php echo tabs_tutorial_video_url; ?>" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+
+-->
+                
+                
+            </li>        
         
         
-<h3>Have any issue ?</h3>
+    
+    </div>
 
-<p>Feel free to Contact with any issue for this plugin, , Ask any question via forum <a href="<?php echo tabs_qa_url; ?>"><?php echo tabs_qa_url; ?></a> <strong style="color:#139b50;">(free)</strong>
-
-
-</p>
-
-<?php
-
-$tabs_customer_type = get_option('tabs_customer_type');
-$tabs_version = get_option('tabs_version');
-
-
-?>
-<?php
-if($tabs_customer_type=="free")
-	{
-		echo '<p>You are using <strong> '.$tabs_customer_type.' version  '.$tabs_version.'</strong> of <strong>'.tabs_plugin_name.'</strong>, To get more feature you could try our premium version. ';
-		
-		echo '<a href="'.tabs_pro_url.'">'.tabs_pro_url.'</a></p>';
-		
-		
-	}
-elseif($tabs_customer_type=="pro")
-	{
-
-		echo '<p>Thanks for using <strong> '.$tabs_customer_type.' version  '.$tabs_version.'</strong> of <strong>'.tabs_plugin_name.'</strong> </p>';
-		
-		
-	}
-
- ?>
-
-
-
-
-<?php
-if($tabs_customer_type=="free")
-	{
-?>
-<br />
-<b>Premium Version Features</b><br />
-
-<ul class="tabs-pro-features">
-
-	<li>Fully responsive and mobile ready.</li>
-	<li>Unlimited Tabs anywhere.</li>
-	<li>Use via short-code.</li>
-	<li>Different Theme.</li>
-	<li>Background Image for Tabs area.</li>
-	<li>Custom Active tabs background color.</li>
-	<li>Custom default background color.</li>
-	<li>Custom font color and size for Tabs header.</li>
-	<li>Custom font color and size for Tabs content.</li>    
-</ul>
-
-
-
-</p>
         
-        
-        
-      <?php
-      }
-	  
-	  ?>  
-      
-<br /> 
-<h3>Please share this plugin with your friends?</h3>
-<table>
-<tr>
-<td width="100px"> 
-<!-- Place this tag in your head or just before your close body tag. -->
-<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
-
-<!-- Place this tag where you want the +1 button to render. -->
-<div class="g-plusone" data-size="medium" data-href="<?php echo tabs_share_url; ?>"></div>
-
-</td>
-<td width="100px">
-<iframe src="//www.facebook.com/plugins/like.php?href=<?php echo tabs_share_url; ?>&amp;width=100&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=743541755673761" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
-
- </td>
-<td width="100px"> 
-
-
-
-
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo tabs_share_url; ?>" data-text="<?php echo tabs_plugin_name;  ?>">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-</td>
-
-</tr>
-
-</table>
-        
-        
-         
-</div>
-<style type="text/css">
-.tabs-pro-features{}
-
-.tabs-pro-features li {
-  list-style: disc inside none;
-}
-
-</style>
+</div> <!-- wrap end -->

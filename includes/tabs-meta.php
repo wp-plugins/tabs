@@ -114,336 +114,246 @@ function meta_boxes_tabs_input( $post ) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table class="form-table">
-
-
-
-
-
-<tr valign="top">
-		<td >
-        
-        <strong>Shortcode</strong><br />
-  <span style=" color:#22aa5d;font-size: 12px;">Copy this shortcode and paste on page or post where you want to display tabs, <br />Use PHP code to your themes file to display tabs.</span>
-        
-        <br /> <br /> 
-        <textarea cols="50" rows="1" style="background:#bfefff" onClick="this.select();" >[tabs <?php echo ' id="'.$post->ID.'"';?> ]</textarea>
-        <br /><br />
+    <div class="para-settings">
+        <div class="option-box">
+            <p class="option-title">Shortcode</p>
+            <p class="option-info">Copy this shortcode and paste on page or post where you want to display tabs, Use PHP code to your themes file to display tabs.</p>
+        	<textarea cols="50" rows="1" style="background:#bfefff" onClick="this.select();" >[tabs <?php echo ' id="'.$post->ID.'"';?> ]</textarea>
+        <br />
         PHP Code:<br />
         <textarea cols="50" rows="1" style="background:#bfefff" onClick="this.select();" ><?php echo '<?php echo do_shortcode("[tabs id='; echo "'".$post->ID."' ]"; echo '"); ?>'; ?></textarea>  
+        </div>
         
- <br />
-
-		</td>
-	</tr>
-
-
-
-
-
-
-    <tr valign="top">
-
-        <td style="vertical-align:middle;">
         
-        <ul class="tab-nav">
+        
+        <ul class="tab-nav"> 
             <li nav="1" class="nav1 active">Tabs Options</li>
             <li nav="2" class="nav2">Tabs Style</li>
             <li nav="3" class="nav3">Tabs Content</li>
-        
-        </ul>
-
-
-        <ul class="box">
-            <li style="display: block;" class="box1 tab-box active">
-            <table>
-                <tr valign="top">
-                	<td style="vertical-align:middle;">
-                   <strong>Option's is empty(Coming Soon.)</strong><br /><br /> 
-                    </td>
-				</tr>
-                
-                </table>
-            </li>
-            <li class="box2 tab-box">
             
-            <table>
-                <tr valign="top">
-                	<td style="vertical-align:middle;">
-                    <strong>Themes</strong><br /><br /> 
+        </ul> <!-- tab-nav end -->
+        
+		<ul class="box">
+            <li style="display: block;" class="box1 tab-box active">
+            
+				<div class="option-box">
+                    <p class="option-title">Option's is empty(Coming Soon.)</p>
+                    <p class="option-info"></p>
+
+                </div>
+            
+            
+            
+            </li>
+            <li style="display: none;" class="box2 tab-box">
+				<div class="option-box">
+                    <p class="option-title">Themes</p>
+                    <p class="option-info"></p>
                     <select name="tabs_themes"  >
                     <option class="tabs_themes_flat" value="flat" <?php if($tabs_themes=="flat")echo "selected"; ?>>Flat</option>
                   
                     </select>
-                    </td>
-				</tr>
-
-
+                </div>
                 
+             
+				<div class="option-box">
+                    <p class="option-title">Background Image</p>
+                    <p class="option-info"></p>
 
-
-				
-
-                
-                
-                
-                
-                                           
-            <script>
-            jQuery(document).ready(function(jQuery)
-                {
-                        jQuery(".tabs_bg_img_list li").click(function()
-                            { 	
-                                jQuery('.tabs_bg_img_list li.bg-selected').removeClass('bg-selected');
-                                jQuery(this).addClass('bg-selected');
-                                
-                                var tabs_bg_img = jQuery(this).attr('data-url');
-            
-                                jQuery('#tabs_bg_img').val(tabs_bg_img);
-                                
-                            })	
-            
-                                
-                })
-            
-            </script> 
-                            
-                            
-                            
-                            
-                            
-                            
-            <tr valign="top">
-            
-                    <td style="vertical-align:middle;">
+					<script>
+                    jQuery(document).ready(function(jQuery)
+                        {
+                                jQuery(".tabs_bg_img_list li").click(function()
+                                    { 	
+                                        jQuery('.tabs_bg_img_list li.bg-selected').removeClass('bg-selected');
+                                        jQuery(this).addClass('bg-selected');
+                                        
+                                        var tabs_bg_img = jQuery(this).attr('data-url');
                     
-                    <strong>Background Image</strong><br /><br /> 
+                                        jQuery('#tabs_bg_img').val(tabs_bg_img);
+                                        
+                                    })	
                     
-            
-            <?php
-            
-            
-            
-                $dir_path = tabs_plugin_dir."css/bg/";
-                $filenames=glob($dir_path."*.png*");
-            
-            
-                $tabs_bg_img = get_post_meta( $post->ID, 'tabs_bg_img', true );
-                
-                if(empty($tabs_bg_img))
-                    {
-                    $tabs_bg_img = "";
-                    }
-            
-            
-                $count=count($filenames);
-                
-            
-                $i=0;
-                echo "<ul class='tabs_bg_img_list' >";
-            
-                while($i<$count)
-                    {
-                        $filelink= str_replace($dir_path,"",$filenames[$i]);
+                                        
+                        })
+                    
+                    </script>
+                    
+                    
+                    
+
+					<?php
+                    
+                    
+                    
+                        $dir_path = tabs_plugin_dir."css/bg/";
+                        $filenames=glob($dir_path."*.png*");
+                    
+                    
+                        $tabs_bg_img = get_post_meta( $post->ID, 'tabs_bg_img', true );
                         
-                        $filelink= tabs_plugin_url."css/bg/".$filelink;
-                        
-                        
-                        if($tabs_bg_img==$filelink)
+                        if(empty($tabs_bg_img))
                             {
-                                echo '<li  class="bg-selected" data-url="'.$filelink.'">';
+                            $tabs_bg_img = "";
                             }
-                        else
-                            {
-                                echo '<li   data-url="'.$filelink.'">';
-                            }
-                        
-                        
-                        echo "<img  width='70px' height='50px' src='".$filelink."' />";
-                        echo "</li>";
-                        $i++;
-                    }
                     
-                echo "</ul>";
+                    
+                        $count=count($filenames);
+                        
+                    
+                        $i=0;
+                        echo "<ul class='tabs_bg_img_list' >";
+                    
+                        while($i<$count)
+                            {
+                                $filelink= str_replace($dir_path,"",$filenames[$i]);
+                                
+                                $filelink= tabs_plugin_url."css/bg/".$filelink;
+                                
+                                
+                                if($tabs_bg_img==$filelink)
+                                    {
+                                        echo '<li  class="bg-selected" data-url="'.$filelink.'">';
+                                    }
+                                else
+                                    {
+                                        echo '<li   data-url="'.$filelink.'">';
+                                    }
+                                
+                                
+                                echo "<img  width='70px' height='50px' src='".$filelink."' />";
+                                echo "</li>";
+                                $i++;
+                            }
+                            
+                        echo "</ul>";
+                        
+                        echo "<input style='width:100%;' value='".$tabs_bg_img."'    placeholder='Please select image or left blank' id='tabs_bg_img' name='tabs_bg_img'  type='text' />";
+                    
+                    
+                    
+                    ?>  
+
+                    
+                    
+                </div>
                 
-                echo "<input style='width:100%;' value='".$tabs_bg_img."'    placeholder='Please select image or left blank' id='tabs_bg_img' name='tabs_bg_img'  type='text' />";
-            
-            
-            
-            ?>
-                    </td>
-                </tr>
-                      
-
-
-
-				<tr valign="top">
-                	<td style="vertical-align:middle;">
-                    <strong>Default Background Color</strong><br /><br />
+                
+				<div class="option-box">
+                    <p class="option-title">Default Background Color</p>
+                    <p class="option-info"></p>
                     <input type="text" name="tabs_default_bg_color" id="tabs_default_bg_color" value="<?php if(!empty($tabs_default_bg_color)) echo $tabs_default_bg_color; else echo "#01ce6a"; ?>" />
-                    </td>
-				</tr>
-
-
-
-				<tr valign="top">
-                	<td style="vertical-align:middle;">
-                    <strong>Active Background Color</strong><br /><br />
+                </div>
+                
+				<div class="option-box">
+                    <p class="option-title">Active Background Color</p>
+                    <p class="option-info"></p>
                     <input type="text" name="tabs_active_bg_color" id="tabs_active_bg_color" value="<?php if(!empty($tabs_active_bg_color)) echo $tabs_active_bg_color; else echo "#02e576"; ?>" />
-                    </td>
-				</tr>
-
+                </div>                
                 
-
                 
-				<tr valign="top">
-                	<td style="vertical-align:middle;">
-                    <strong>Tabs Header Font Color</strong><br /><br />
+				<div class="option-box">
+                    <p class="option-title">Tabs Header Font Color</p>
+                    <p class="option-info"></p>
                     <input type="text" name="tabs_items_title_color" id="tabs_items_title_color" value="<?php if(!empty($tabs_items_title_color)) echo $tabs_items_title_color; else echo "#28c8a8"; ?>" />
-                    </td>
-				</tr>                
+                </div>                  
                 
                 
-				<tr valign="top">
-                	<td style="vertical-align:middle;">
-                    <strong>Tabs Header Font Size</strong><br /><br />
+				<div class="option-box">
+                    <p class="option-title">Tabs Header Font Size</p>
+                    <p class="option-info"></p>
                     <input type="text" name="tabs_items_title_font_size" placeholder="ex:14px number with px" id="tabs_items_title_font_size" value="<?php if(!empty($tabs_items_title_font_size)) echo $tabs_items_title_font_size; else echo "14px"; ?>" />
-                    </td>
-				</tr>                   
-
-
-
-
-<tr valign="top">
-                	<td style="vertical-align:middle;">
-                    <strong>Tabs Content Font Color</strong><br /><br />
-                    <input type="text" name="tabs_items_content_color" id="tabs_items_content_color" value="<?php if(!empty($tabs_items_content_color)) echo $tabs_items_content_color; else echo "#fff"; ?>" />
-                    </td>
-				</tr>
-
-
-
-<tr valign="top">
-                	<td style="vertical-align:middle;">
-                    <strong>Tabs Content Font Size</strong><br /><br />
+                </div>                    
+                
+                
+				<div class="option-box">
+                    <p class="option-title">Tabs Content Font Color</p>
+                    <p class="option-info"></p>
+					<input type="text" name="tabs_items_content_color" id="tabs_items_content_color" value="<?php if(!empty($tabs_items_content_color)) echo $tabs_items_content_color; else echo "#fff"; ?>" />
+                </div>                  
+                
+                
+                
+				<div class="option-box">
+                    <p class="option-title">Tabs Content Font Size</p>
+                    <p class="option-info"></p>
                     <input type="text" name="tabs_items_content_font_size" id="tabs_items_content_font_size" value="<?php if(!empty($tabs_items_content_font_size)) echo $tabs_items_content_font_size; else echo "13px"; ?>" />
-                    </td>
-				</tr>
+                </div>                  
 
-
-
-
-
-
-
-
- 
-		</table>
-
-
+                
+            </li> 
+            
+            <li style="display: none;" class="box3 tab-box active">
+            
+				<div class="option-box">
+                    <p class="option-title">Tabs Content</p>
+                    <p class="option-info"></p>
+                    <div class="tabs-content-buttons" >
+                        <div class="button add-tabs">Add</div>
+                        <br />
+                    </div>
+                    
+                    
+                    
+                    <table class="tabs-content" width="100%">
+                        
+                        <?php
+                        $total_row = count($tabs_content_title);
+                        
+                        if(empty($tabs_content_title))
+                            {
+                                $tabs_content_title = array(0);
+                            }
+                        
+                        foreach ($tabs_content_title as $index => $tabs_title)
+                            {
+        
+                            
+                            ?>
+                            <tr index='<?php echo $index; ?>' valign="top">
+        
+                                <td style="vertical-align:middle;">
+                                <span class="removeTabs">X</span>
+                                <br/><br/>
+                                <input width="100%" placeholder="Tabs Header" type="text" name="tabs_content_title[<?php echo $index; ?>]" value="<?php if(!empty($tabs_title)) echo $tabs_title; ?>" />
+                                <br /><br />
+                                <textarea placeholder="Tabs Content" name="tabs_content_body[<?php echo $index; ?>]" ><?php if(!empty($tabs_content_body[$index])) echo $tabs_content_body[$index]; ?></textarea>
+                                </td>           
+                            </tr>
+                            <?php
+                            
+                            
+                            }
+                        
+                        ?>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+        
+        
+                             
+                         </table>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>  
+            
             </li>
             
-            
-            <li class="box3 tab-box">
-            <div class="tabs-content-buttons" >
-                <div class="button add-tabs">Add</div>
-                <br /> <br />
-            </div>
-
-
-
-
-
-                <table class="tabs-content">
                 
-                <?php
-                $total_row = count($tabs_content_title);
-				
-				if(empty($tabs_content_title))
-					{
-						$tabs_content_title = array(0);
-					}
-				
-				foreach ($tabs_content_title as $index => $tabs_title)
-					{
-
-					
-					?>
-                    <tr index='<?php echo $index; ?>' valign="top">
-
-                        <td style="vertical-align:middle;">
-                        <span class="removeTabs">X</span>
-                        <br/><br/>
-                        <input width="100%" placeholder="Tabs Header" type="text" name="tabs_content_title[<?php echo $index; ?>]" value="<?php if(!empty($tabs_title)) echo $tabs_title; ?>" />
-                        <br /><br />
-                        <textarea placeholder="Tabs Content" name="tabs_content_body[<?php echo $index; ?>]" ><?php if(!empty($tabs_content_body[$index])) echo $tabs_content_body[$index]; ?></textarea>
-                        </td>           
-                    </tr>
-                    <?php
-					
-					
-					}
-				
-				?>
-                
-                
-                
-                
-                
-                
-                
-
-
-                     
-                 </table>
-            
-
-
-            </li>
-            
-            
-            
-            
-            
-            
             
         </ul>
         
+
         
-        
-        </td>
-    </tr> 
-
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 
