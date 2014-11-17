@@ -22,6 +22,7 @@ Tabs is pure HTML & CSS3 responsive Tabs grid for WordPress. By this plugin you 
 
 
 <strong>Plugin Features</strong><br />
+
 * Fully responsive and mobile ready.
 * Unlimited Tabs anywhere.
 * Use via short-code.
@@ -60,7 +61,10 @@ then paste this shortcode anywhere in your page to display Tabs<br />
 == Screenshots ==
 
 1. screenshot-1
-1. screenshot-2
+2. screenshot-2
+3. screenshot-2
+4. screenshot-2
+
 
 == Changelog ==
 
