@@ -88,8 +88,30 @@
 
 
 -->
+
+
+<?php
+    if($tabs_customer_type=="free")
+        {	
+?>
                 
                 
+				<div class="option-box">
+                    <p class="option-title">Comparison</p>
+                    <p class="option-info">You could try our premium version for more features.</p>
+                    <a target="_blank" href="<?php echo tabs_pro_url; ?>">
+                	<img class="tabs-pro-pricing" src="<?php echo tabs_plugin_url."css/tabs-pro-pricing.png";?>" />
+               		</a>
+             </div>  
+<?php    
+		}
+
+?>
+
+
+
+
+       
             </li>        
         
         
