@@ -3,7 +3,7 @@
 Plugin Name: Tabs
 Plugin URI: http://paratheme.com/items/tabs-html-css3-responsive-tabs-for-wordpress/
 Description: Fully responsive and mobile ready content tabs grid for wordpress.
-Version: 1.1
+Version: 1.2
 Author: paratheme
 Author URI: http://paratheme.com
 License: GPLv2 or later
@@ -69,7 +69,7 @@ register_activation_hook(__FILE__, 'tabs_activation');
 
 function tabs_activation()
 	{
-		$tabs_version= "1.1";
+		$tabs_version= "1.2";
 		update_option('tabs_version', $tabs_version); //update plugin version.
 		
 		$tabs_customer_type= "free"; //customer_type "free"

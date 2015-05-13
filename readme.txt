@@ -3,8 +3,8 @@
 	Donate link: http://paratheme.com
 	Tags: tabs, Responsive Tabs, Tabs plugin, jQuery Tabs, tabs short-code, tabs Widget, tabs plugin wordpress, tabs plugin jquery
 	Requires at least: 3.8
-	Tested up to: 4.0
-	Stable tag: 1.1
+	Tested up to: 4.2.2
+	Stable tag: 1.2
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ Tabs is pure HTML & CSS3 responsive Tabs grid for WordPress. By this plugin you 
 
 
 ### Tabs by http://paratheme.com
-
+* [Upgrade to Premium!&raquo;](http://paratheme.com/items/tabs-html-css3-responsive-tabs-for-wordpress/)
 <br />
 
 
@@ -68,6 +68,10 @@ then paste this shortcode anywhere in your page to display Tabs<br />
 
 == Changelog ==
 
+	
+	= 1.2 =
+    * 13/05/2015 fix - minor php issue fixed.
+    * 13/05/2015 add - title font color.
 	
 	= 1.1 =
     * 17/11/2014 add confirmation before delete tab.

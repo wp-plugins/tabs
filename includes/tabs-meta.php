@@ -76,38 +76,15 @@ function meta_boxes_tabs_input( $post ) {
 	$tabs_items_content_color = get_post_meta( $post->ID, 'tabs_items_content_color', true );	
 	$tabs_items_content_font_size = get_post_meta( $post->ID, 'tabs_items_content_font_size', true );		
 	
-	$tabs_items_thumb_size = get_post_meta( $post->ID, 'tabs_items_thumb_size', true );	
-	$tabs_items_thumb_max_hieght = get_post_meta( $post->ID, 'tabs_items_thumb_max_hieght', true );	
+
+	
 	
 	$tabs_content_title = get_post_meta( $post->ID, 'tabs_content_title', true );	
 	$tabs_content_body = get_post_meta( $post->ID, 'tabs_content_body', true );
 	
 	
- 
 
 
-
-
-
-
-		$tabs_customer_type = get_option('tabs_customer_type');
-
-		if($tabs_customer_type=="free")
-			{
-				echo '<script>
-					jQuery(document).ready(function()
-						{
-							jQuery(".tabs_taxonomy_category, .tabs_post_ids, #tabs_items_title_color, .tabs_themes_saiga, .tabs_themes_sako, .tabs_themes_anti_ruger, #tabs_content_source_taxonomy, #tabs_content_source_post_id").attr("title","Only For Premium Version")
-							jQuery(".tabs_taxonomy_category, .tabs_post_ids, #tabs_items_title_color, .tabs_themes_saiga, .tabs_themes_sako, .tabs_themes_anti_ruger, #tabs_content_source_taxonomy, #tabs_content_source_post_id").attr("disabled","disabled")
-						
-						})
-	 				</script>';
-      
-			}
-		elseif($tabs_customer_type=="pro")
-			{
-				//premium customer support.
-			}
 
 ?>
 
@@ -127,25 +104,14 @@ function meta_boxes_tabs_input( $post ) {
         
         
         <ul class="tab-nav"> 
-            <li nav="1" class="nav1 active">Tabs Options</li>
-            <li nav="2" class="nav2">Tabs Style</li>
-            <li nav="3" class="nav3">Tabs Content</li>
+            <li nav="1" class="nav1">Tabs Style</li>
+            <li nav="2" class="nav2">Tabs Content</li>
             
         </ul> <!-- tab-nav end -->
         
 		<ul class="box">
+            
             <li style="display: block;" class="box1 tab-box active">
-            
-				<div class="option-box">
-                    <p class="option-title">Option's is empty(Coming Soon.)</p>
-                    <p class="option-info"></p>
-
-                </div>
-            
-            
-            
-            </li>
-            <li style="display: none;" class="box2 tab-box">
 				<div class="option-box">
                     <p class="option-title">Themes</p>
                     <p class="option-info"></p>
@@ -283,7 +249,7 @@ function meta_boxes_tabs_input( $post ) {
                 
             </li> 
             
-            <li style="display: none;" class="box3 tab-box active">
+            <li style="display: none;" class="box2 tab-box">
             
 				<div class="option-box">
                     <p class="option-title">Tabs Content</p>
@@ -408,8 +374,8 @@ function meta_boxes_tabs_save( $post_id ) {
 	$tabs_items_content_color = sanitize_text_field( $_POST['tabs_items_content_color'] );	
 	$tabs_items_content_font_size = sanitize_text_field( $_POST['tabs_items_content_font_size'] );	
 
-	$tabs_items_thumb_size = sanitize_text_field( $_POST['tabs_items_thumb_size'] );
-	$tabs_items_thumb_max_hieght = sanitize_text_field( $_POST['tabs_items_thumb_max_hieght'] );	
+
+	
 	
 	$tabs_content_title = stripslashes_deep( $_POST['tabs_content_title'] );	
 	$tabs_content_body = stripslashes_deep( $_POST['tabs_content_body'] );		
@@ -434,8 +400,8 @@ function meta_boxes_tabs_save( $post_id ) {
 	update_post_meta( $post_id, 'tabs_items_content_color', $tabs_items_content_color );
 	update_post_meta( $post_id, 'tabs_items_content_font_size', $tabs_items_content_font_size );
 
-	update_post_meta( $post_id, 'tabs_items_thumb_size', $tabs_items_thumb_size );	
-	update_post_meta( $post_id, 'tabs_items_thumb_max_hieght', $tabs_items_thumb_max_hieght );
+	
+
 	
 	update_post_meta( $post_id, 'tabs_content_title', $tabs_content_title );
 	update_post_meta( $post_id, 'tabs_content_body', $tabs_content_body );	

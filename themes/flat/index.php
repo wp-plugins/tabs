@@ -82,7 +82,7 @@ function tabs_body_flat($post_id)
 		foreach ($tabs_content_body as $index => $tabs_content)
 			{
 				$tabs_body.= '<div style="color:'.$tabs_items_content_color.';font-size:'.$tabs_items_content_font_size.'" id="tab-'.$post_id.'-'.$index.'" class="tabs-content">';
-				$tabs_body.= $tabs_content."----------------<br /><br /><br />";		
+				$tabs_body.= $tabs_content;		
 				$tabs_body.= '</div>';
 			
 			}
