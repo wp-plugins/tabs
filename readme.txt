@@ -3,7 +3,7 @@
 	Donate link: http://paratheme.com
 	Tags: tabs, Responsive Tabs, Tabs plugin, jQuery Tabs, tabs short-code, tabs Widget, tabs plugin wordpress, tabs plugin jquery
 	Requires at least: 3.8
-	Tested up to: 4.2.2
+	Tested up to: 4.2.4
 	Stable tag: 1.2
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
